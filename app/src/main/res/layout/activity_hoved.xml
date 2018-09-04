@@ -25,7 +25,7 @@
         android:layout_height="204dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="38dp">
+        android:layout_marginTop="46dp">
 
         <ImageView
             android:id="@+id/imageView"
@@ -36,8 +36,65 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="291dp"
+        android:layout_height="243dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+
+        <TableRow
+            android:id="@+id/spillRad"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <Button
+                android:id="@+id/spillKnapp"
+                style="?android:attr/actionButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="casual"
+                android:text="@string/start_spill"
+                android:textAlignment="center"
+                android:textColor="?android:attr/actionMenuTextColor"
+                android:textSize="22sp"
+                android:textStyle="bold|italic" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <Button
+                android:id="@+id/statistikkKnapp"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="casual"
+                android:text="@string/se_statistikk"
+                android:textAlignment="center"
+                android:textColor="?android:attr/actionMenuTextColor"
+                android:textSize="22sp"
+                android:textStyle="bold|italic" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/preferanserRad"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <Button
+                android:id="@+id/preferanserKnapp"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/preferanser"
+                android:fontFamily="casual"
+                android:textAlignment="center"
+                android:textColor="?android:attr/actionMenuTextColor"
+                android:textSize="22sp"
+                android:textStyle="bold|italic"/>
+
+        </TableRow>
+    </LinearLayout>
 </RelativeLayout>
