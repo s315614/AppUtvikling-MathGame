@@ -17,8 +17,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Aktivitet2"
-            android:parentActivityName=".Hoved"></activity>
     </application>
 
 </manifest>
