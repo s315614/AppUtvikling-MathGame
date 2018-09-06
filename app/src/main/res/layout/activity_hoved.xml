@@ -48,7 +48,7 @@
 
             <Button
                 android:id="@+id/spillKnapp"
-                style="?android:attr/actionButtonStyle"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="casual"
@@ -66,7 +66,7 @@
 
             <Button
                 android:id="@+id/statistikkKnapp"
-                style="@style/Widget.AppCompat.Button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="casual"
@@ -85,15 +85,15 @@
 
             <Button
                 android:id="@+id/preferanserKnapp"
-                style="@style/Widget.AppCompat.Button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/preferanser"
                 android:fontFamily="casual"
+                android:text="@string/preferanser"
                 android:textAlignment="center"
                 android:textColor="?android:attr/actionMenuTextColor"
                 android:textSize="22sp"
-                android:textStyle="bold|italic"/>
+                android:textStyle="bold|italic" />
 
         </TableRow>
     </LinearLayout>

@@ -1,13 +1,10 @@
 package com.example.bas.livssyklus;
 
-import android.nfc.Tag;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 
 public class Hoved extends AppCompatActivity {
 
@@ -16,6 +13,35 @@ public class Hoved extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoved);
 
+        Button spillKnapp = (Button)findViewById(R.id.spillKnapp);
+        spillKnapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //do something here
+                Intent startSpill = new Intent(getApplicationContext(), Spill.class);
+                startActivity(startSpill);
+            }
+        });
+
+        Button preferenseKnapp = (Button)findViewById(R.id.preferanserKnapp);
+        preferenseKnapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //do something here
+                Intent goTilPrefereser = new Intent(getApplicationContext(), Preferenser.class);
+                startActivity(goTilPrefereser);
+            }
+        });
+
+        Button statistikkKnapp = (Button)findViewById(R.id.statistikkKnapp);
+        statistikkKnapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //do something here
+                Intent visStatistikk = new Intent(getApplicationContext(), Statistikk.class);
+                startActivity(visStatistikk);
+            }
+        });
     }
 
 }
