@@ -2,7 +2,9 @@ package com.example.bas.livssyklus;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.SparseArray;
 import android.view.View;
+import android.view.inputmethod.InputConnection;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,12 +15,15 @@ public class Spill extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spill);
 
+        final SparseArray<String> keyValues = new SparseArray<>();
+        final InputConnection inputConnection;
+
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number1 = 1;
+                String number1 = "1";
                 numberEntered.setText(number1 + "");
             }
         });
@@ -27,7 +32,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number2 = 2;
+                String number2 = "2";
                 numberEntered.setText(number2 + "");
             }
         });
@@ -36,7 +41,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number3 = 3;
+                String number3 = "3";
                 numberEntered.setText(number3 + "");
             }
         });
@@ -45,7 +50,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number4 = 4;
+                String number4 = "4";
                 numberEntered.setText(number4 + "");
             }
         });
@@ -54,7 +59,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number5 = 5;
+                String number5 = "5";
                 numberEntered.setText(number5 + "");
             }
         });
@@ -63,7 +68,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number6 = 6;
+                String number6 = "6";
                 numberEntered.setText(number6 + "");
             }
         });
@@ -72,7 +77,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number7 = 7;
+                String number7 = "7";
                 numberEntered.setText(number7 + "");
             }
         });
@@ -81,7 +86,7 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number8 = 8;
+                String number8 = "8";
                 numberEntered.setText(number8 + "");
             }
         });
@@ -90,10 +95,10 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number9 = 9;
-                int textInt = Integer.valueOf(numberEntered.getText().toString());
-                numberEntered.setText(String.valueOf(textInt+""+number9));
-                //numberEntered.setText(number9 + "");
+                String number9 = "9";
+                //int textInt = Integer.valueOf(numberEntered.getText().toString());
+              //  numberEntered.setText(String.valueOf(textInt+""+number9));
+                numberEntered.setText(number9);
             }
         });
         Button button0 = (Button) findViewById(R.id.button0);
@@ -101,13 +106,27 @@ public class Spill extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText numberEntered = (EditText) findViewById(R.id.numberEntered);
-                int number0 = 0;
-                int textInt = Integer.valueOf(numberEntered.getText().toString());
-                numberEntered.setText(String.valueOf(textInt+""+number0));
+                keyValues.put(R.id.button0,"0");
+               // String number0 = "0";
+               // numberEntered.setText(number0);
+                //int textInt = Integer.valueOf(numberEntered.getText().toString());
+                //numberEntered.setText(String.valueOf(textInt+""+number0));
             }
         });
 
         Button backButton = (Button) findViewById(R.id.backButton);
         Button enterButton = (Button) findViewById(R.id.enterButton);
+
+        keyValues.put(R.id.button1,"1");
+        keyValues.put(R.id.button2,"2");
+        keyValues.put(R.id.button3,"3");
+        keyValues.put(R.id.button4,"4");
+        keyValues.put(R.id.button5,"5");
+        keyValues.put(R.id.button6,"6");
+        keyValues.put(R.id.button7,"7");
+        keyValues.put(R.id.button8,"8");
+        keyValues.put(R.id.button9,"9");
+
+
     }
 }
