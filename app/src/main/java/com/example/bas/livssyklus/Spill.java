@@ -21,7 +21,12 @@ public class Spill extends AppCompatActivity {
         final TextView outputText = (TextView)findViewById(R.id.outputTxt);
 
 
+        int x =  (int)randomNumber(1,25);
 
+        Resources res = getResources();
+        String[] questions;
+        questions = res.getStringArray(R.array.questions);
+        outputText.setText(questions[x]);
 
 
         Button button1 = (Button)findViewById(R.id.button1);
@@ -130,13 +135,23 @@ public class Spill extends AppCompatActivity {
                 }
             }
         });
-        int x =  (int)randomNumber(1,25);
 
-        Resources res = getResources();
-        String[] questions;
-        questions = res.getStringArray(R.array.questions);
-        outputText.setText(questions[x]);
-        
+        Button buttonSvar = (Button)findViewById(R.id.buttonSvar);
+        buttonSvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inputText.setText("");
+                int x =  (int)randomNumber(1,25);
+
+                Resources res = getResources();
+                String[] questions;
+                questions = res.getStringArray(R.array.questions);
+
+                outputText.setText(questions[x]);
+            }
+        });
+
+
 
     }
     public static int randomNumber(int min, int max){
