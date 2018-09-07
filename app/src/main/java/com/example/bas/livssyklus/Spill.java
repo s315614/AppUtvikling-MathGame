@@ -3,11 +3,8 @@ package com.example.bas.livssyklus;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.SparseArray;
 import android.view.View;
-import android.view.inputmethod.InputConnection;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class Spill extends AppCompatActivity {
@@ -17,8 +14,10 @@ public class Spill extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spill);
 
+
         final TextView inputText = (TextView)findViewById(R.id.inputTxt);
         final TextView outputText = (TextView)findViewById(R.id.outputTxt);
+
 
         Button button1 = (Button)findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
@@ -111,11 +110,12 @@ public class Spill extends AppCompatActivity {
             }
         });
 
+
         Button buttonSlett = (Button)findViewById(R.id.buttonSlett);
         buttonSlett.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inputText.setText(inputText.getText() + "0");
+                inputText.setText("");
 
             }
         });
