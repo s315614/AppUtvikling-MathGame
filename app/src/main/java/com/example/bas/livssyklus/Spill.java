@@ -115,8 +115,14 @@ public class Spill extends AppCompatActivity {
         buttonSlett.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inputText.setText("");
-
+               // inputText.setText("");
+                String backspace = null;
+                if (inputText.getText().length() > 0){
+                    StringBuilder strB = new StringBuilder(inputText.getText());
+                    strB.deleteCharAt(inputText.getText().length()-1);
+                    backspace = strB.toString();
+                    inputText.setText(backspace);
+                }
             }
         });
 
