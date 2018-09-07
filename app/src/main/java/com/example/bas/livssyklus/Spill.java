@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Spill extends AppCompatActivity {
 
     @Override
@@ -17,6 +19,9 @@ public class Spill extends AppCompatActivity {
 
         final TextView inputText = (TextView)findViewById(R.id.inputTxt);
         final TextView outputText = (TextView)findViewById(R.id.outputTxt);
+
+
+
 
 
         Button button1 = (Button)findViewById(R.id.button1);
@@ -125,11 +130,18 @@ public class Spill extends AppCompatActivity {
                 }
             }
         });
+        int x =  (int)randomNumber(1,25);
 
         Resources res = getResources();
         String[] questions;
         questions = res.getStringArray(R.array.questions);
-        outputText.setText(questions[1]);
+        outputText.setText(questions[x]);
+        
 
     }
+    public static int randomNumber(int min, int max){
+       Random rand = new Random();
+       return rand.nextInt((max - min) +1)+min;
+    }
+
 }

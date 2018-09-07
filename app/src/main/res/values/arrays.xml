@@ -2,6 +2,33 @@
 <resources>
 
     <string-array name="questions">
+
+        <item>8+8</item>
+        <item>4*2</item>
+        <item>3*3</item>
+        <item>10/2</item>
+        <item>5-2</item>
+        <item>3*7</item>
+        <item>42/6</item>
+        <item>23+17</item>
+        <item>44-8</item>
+        <item>99/3</item>
+        <item>7*8</item>
+        <item>9+25</item>
+        <item>54-9</item>
+        <item>9*5</item>
+        <item>6*4</item>
+        <item>11*12</item>
+        <item>34+48</item>
+        <item>92/4</item>
+        <item>76-21</item>
+        <item>12*10</item>
+        <item>98-25</item>
+        <item>91/7</item>
+        <item>65+39</item>
+        <item>15*3</item>
+        <item>74/2</item>
+
         <item>2 x 2</item>
         <item>5 + 20</item>
         <item>20 / 2</item>
