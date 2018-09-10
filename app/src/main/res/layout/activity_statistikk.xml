@@ -6,11 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".Statistikk">
 
-    <TextView
-        android:id="@+id/textView4"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Show Statistics" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="109dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="163dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/riktigText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Riktig" />
+
+            <TextView
+                android:id="@+id/riktig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/galtText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Galt" />
+
+            <TextView
+                android:id="@+id/galt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

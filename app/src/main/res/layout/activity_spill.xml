@@ -2,20 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".Hoved"
     android:background="@color/colorBackground"
-    tools:context=".Hoved">
+    >
 
     <LinearLayout
-        android:id="@+id/displayLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:orientation="vertical">
-
 
         <TextView
             android:id="@+id/stageTxt"
@@ -44,7 +42,7 @@
         <TextView
             android:id="@+id/inputTxt"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="36dp"
             android:background="@color/colorWhite"
             android:maxLength="10"
             android:textAlignment="center"
@@ -52,17 +50,66 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="79dp" />
+            android:layout_height="33dp" />
 
         <LinearLayout
-            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="176dp"
+                android:layout_height="66dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/riktig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Riktig"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/riktigText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="178dp"
+                android:layout_height="66dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/galt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Galt"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/galtText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/firstRaw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -91,7 +138,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/secondRaw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -120,7 +166,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/thirdRaw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -148,7 +193,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/fourthRaw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

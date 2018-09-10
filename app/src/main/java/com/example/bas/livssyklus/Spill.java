@@ -1,35 +1,42 @@
 package com.example.bas.livssyklus;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Spill extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spill);
 
-
-        final TextView inputText = (TextView)findViewById(R.id.inputTxt);
-        final TextView outputText = (TextView)findViewById(R.id.outputTxt);
-
-
-        int x =  (int)randomNumber(1,25);
+        final TextView inputText = (TextView) findViewById(R.id.inputTxt);
+        final TextView outputText = (TextView) findViewById(R.id.outputTxt);
 
         Resources res = getResources();
-        String[] questions;
-        questions = res.getStringArray(R.array.questions);
-        outputText.setText(questions[x]);
+        final String[] questions  = res.getStringArray(R.array.questions);
+        final String[] answers  = res.getStringArray(R.array.answers);
+        final String[] saveData  = res.getStringArray(R.array.result);
+        final ArrayList<Integer> list = new ArrayList<>();
 
+        generateAtStart(list,questions,outputText);
 
-        Button button1 = (Button)findViewById(R.id.button1);
+        Button button1 = (Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +45,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button2 = (Button)findViewById(R.id.button2);
+        Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +54,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button3 = (Button)findViewById(R.id.button3);
+        Button button3 = (Button) findViewById(R.id.button3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +63,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button4 = (Button)findViewById(R.id.button4);
+        Button button4 = (Button) findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +72,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button5 = (Button)findViewById(R.id.button5);
+        Button button5 = (Button) findViewById(R.id.button5);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,7 +81,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button6 = (Button)findViewById(R.id.button6);
+        Button button6 = (Button) findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +91,7 @@ public class Spill extends AppCompatActivity {
         });
 
 
-        Button button7 = (Button)findViewById(R.id.button7);
+        Button button7 = (Button) findViewById(R.id.button7);
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +100,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button8 = (Button)findViewById(R.id.button8);
+        Button button8 = (Button) findViewById(R.id.button8);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +109,7 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button9 = (Button)findViewById(R.id.button9);
+        Button button9 = (Button) findViewById(R.id.button9);
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -111,52 +118,143 @@ public class Spill extends AppCompatActivity {
             }
         });
 
-        Button button0 = (Button)findViewById(R.id.button0);
+        Button button0 = (Button) findViewById(R.id.button0);
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 inputText.setText(inputText.getText() + "0");
-
             }
         });
 
-
-        Button buttonSlett = (Button)findViewById(R.id.buttonSlett);
+        Button buttonSlett = (Button) findViewById(R.id.buttonSlett);
         buttonSlett.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // inputText.setText("");
-                String backspace = null;
-                if (inputText.getText().length() > 0){
-                    StringBuilder strB = new StringBuilder(inputText.getText());
-                    strB.deleteCharAt(inputText.getText().length()-1);
-                    backspace = strB.toString();
-                    inputText.setText(backspace);
-                }
+                String str = String.valueOf(inputText.getText());
+                int length = str.length();
+                if (length > 0) inputText.setText(str.substring(0, length - 1));
+
             }
         });
 
-        Button buttonSvar = (Button)findViewById(R.id.buttonSvar);
+
+        Button buttonSvar = (Button) findViewById(R.id.buttonSvar);
+        final TextView riktigText = (TextView)findViewById(R.id.riktigText);
+        final TextView galtText = (TextView)findViewById(R.id.galtText);
         buttonSvar.setOnClickListener(new View.OnClickListener() {
+
+            int stage = 0;
+            int riktig = 0;
+            int galt = 0;
+
             @Override
             public void onClick(View v) {
-                inputText.setText("");
-                int x =  (int)randomNumber(1,25);
 
-                Resources res = getResources();
-                String[] questions;
-                questions = res.getStringArray(R.array.questions);
+                if(validationSuccess(inputText)){
+                    if(stage <= 4){
+                        int a = generateRandomInt(list);
+                        boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
+                        if(check){
+                            riktig+=1;
+                        }else galt+=1;
 
-                outputText.setText(questions[x]);
+                        questionUpdate(outputText, questions,a, inputText);
+                        Toast.makeText(Spill.this,String.valueOf("Riktig: "+ riktig+" Galt: "+galt),Toast.LENGTH_LONG).show();
+                        stage +=1;
+
+                    }else{
+                        lagreDataene(riktig,galt);
+                        //String riktigFraXML = String.valueOf(saveData[0]);
+                        //String galtFraXML = String.valueOf(saveData[1]);
+                        Toast.makeText(Spill.this,String.valueOf("Ferdig!"),Toast.LENGTH_LONG).show();
+
+
+                    }
+                }else{
+                    Toast.makeText(Spill.this, "You have to answear!", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
+    }
 
+    /*
+    public void lagreDataene(String[] string, int riktig, int galt){
+        string[0] = String.valueOf(riktig);
+        string[1] = String.valueOf(galt);
+    }
+    */
+
+    public void lagreDataene(int riktig, int galt){
+        SharedPreferences prefs = this.getSharedPreferences("Resultat",Spill.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("antallRiktig", riktig);
+        editor.putInt("antallGalt", galt);
+        editor.commit();
 
     }
-    public static int randomNumber(int min, int max){
-       Random rand = new Random();
-       return rand.nextInt((max - min) +1)+min;
+
+    public boolean validationSuccess(TextView text){
+        boolean check;
+        if(text.getText().toString() != "") {
+            check = true;
+        }else{
+            check = false;
+        }
+        return check;
     }
+
+
+    public boolean checkQuestion(TextView input, String[] svarliste, ArrayList<Integer> list, TextView riktigText, TextView galtText){
+        boolean check;
+        int svar = Integer.parseInt(String.valueOf(input.getText()));
+        int sjekkSvar = Integer.parseInt(svarliste[list.get(list.size()-2)]);
+
+        if(svar == sjekkSvar){
+            check = true;
+            riktigText.setText(String.valueOf(Integer.parseInt(String.valueOf(riktigText.getText()))+1));
+
+        }else{
+            check = false;
+            galtText.setText(String.valueOf(Integer.parseInt(String.valueOf(galtText.getText()))+1));
+
+        }
+        return check;
+    }
+
+    public void questionUpdate(TextView text, String[] array, int value, TextView input) {
+        text.setText(String.valueOf(array[value]));
+        input.setText(String.valueOf(""));
+
+    }
+
+    public int generateRandomInt(ArrayList<Integer> list) {
+        int value = generateRandomInt();
+        while(existBefore(list, value)){
+            value = generateRandomInt();
+        }
+        list.add(value);
+        return value;
+    }
+
+    public boolean existBefore(ArrayList<Integer> list, int number) {
+        if(list.contains(number))return true;
+        return false;
+    }
+
+    public int generateRandomInt() {
+        Random r = new Random();
+        int value = r.nextInt((5 - 0) + 1) + 0;
+        return value;
+    }
+
+    public void generateAtStart(ArrayList<Integer>list, String[] array, TextView text){
+        int tall = generateRandomInt();
+        list.add(tall);
+        text.setText(String.valueOf(array[tall]));
+    }
+
 
 }
+
