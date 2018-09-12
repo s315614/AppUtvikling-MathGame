@@ -20,6 +20,8 @@ public class Hoved extends AppCompatActivity {
                 //do something here
                 Intent startSpill = new Intent(getApplicationContext(), Spill.class);
                 startActivity(startSpill);
+                finish();
+
             }
         });
 

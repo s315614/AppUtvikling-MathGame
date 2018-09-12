@@ -1,6 +1,7 @@
 package com.example.bas.livssyklus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
@@ -31,8 +32,9 @@ public class Spill extends AppCompatActivity {
         Resources res = getResources();
         final String[] questions  = res.getStringArray(R.array.questions);
         final String[] answers  = res.getStringArray(R.array.answers);
-        final String[] saveData  = res.getStringArray(R.array.result);
         final ArrayList<Integer> list = new ArrayList<>();
+        final SharedPreferences prefs = getSharedPreferences("Modus", MODE_PRIVATE);
+        final int mode = prefs.getInt("Mode", 25);
 
         generateAtStart(list,questions,outputText);
 
@@ -141,9 +143,12 @@ public class Spill extends AppCompatActivity {
         Button buttonSvar = (Button) findViewById(R.id.buttonSvar);
         final TextView riktigText = (TextView)findViewById(R.id.riktigText);
         final TextView galtText = (TextView)findViewById(R.id.galtText);
+        final TextView stageText = (TextView)findViewById(R.id.stageTxt);
+        stageText.setText(String.valueOf("Stage 1/"+String.valueOf(mode)));
+
         buttonSvar.setOnClickListener(new View.OnClickListener() {
 
-            int stage = 0;
+            int stage = 1;
             int riktig = 0;
             int galt = 0;
 
@@ -151,7 +156,7 @@ public class Spill extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(validationSuccess(inputText)){
-                    if(stage <= 4){
+                    if(stage < mode){
                         int a = generateRandomInt(list);
                         boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
                         if(check){
@@ -160,15 +165,27 @@ public class Spill extends AppCompatActivity {
 
                         questionUpdate(outputText, questions,a, inputText);
                         Toast.makeText(Spill.this,String.valueOf("Riktig: "+ riktig+" Galt: "+galt),Toast.LENGTH_LONG).show();
+                        Toast.makeText(Spill.this,String.valueOf(String.valueOf(mode)),Toast.LENGTH_LONG).show();
                         stage +=1;
+                        stageText.setText(String.valueOf("Stage "+stage+ "/"+String.valueOf(mode)));
 
-                    }else{
+                    }
+
+                    else if(stage==mode){
+                        int a = generateRandomInt(list);
+                        boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
+                        if(check){
+                            riktig+=1;
+                        }else galt+=1;
+                        list.remove(list.size()-1);
                         lagreDataene(riktig,galt);
-                        //String riktigFraXML = String.valueOf(saveData[0]);
-                        //String galtFraXML = String.valueOf(saveData[1]);
+                        Intent goToMain = new Intent(getApplicationContext(), Hoved.class);
+                        startActivity(goToMain);
+                        finish();
+                    }
+
+                    else{
                         Toast.makeText(Spill.this,String.valueOf("Ferdig!"),Toast.LENGTH_LONG).show();
-
-
                     }
                 }else{
                     Toast.makeText(Spill.this, "You have to answear!", Toast.LENGTH_LONG).show();
@@ -179,15 +196,8 @@ public class Spill extends AppCompatActivity {
 
     }
 
-    /*
-    public void lagreDataene(String[] string, int riktig, int galt){
-        string[0] = String.valueOf(riktig);
-        string[1] = String.valueOf(galt);
-    }
-    */
-
     public void lagreDataene(int riktig, int galt){
-        SharedPreferences prefs = this.getSharedPreferences("Resultat",Spill.MODE_PRIVATE);
+        SharedPreferences prefs = getApplication().getSharedPreferences("Resultat",MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("antallRiktig", riktig);
         editor.putInt("antallGalt", galt);
@@ -245,7 +255,7 @@ public class Spill extends AppCompatActivity {
 
     public int generateRandomInt() {
         Random r = new Random();
-        int value = r.nextInt((5 - 0) + 1) + 0;
+        int value = r.nextInt((25 - 0) + 1) + 0;
         return value;
     }
 

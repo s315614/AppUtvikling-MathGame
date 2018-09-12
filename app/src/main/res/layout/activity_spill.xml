@@ -19,7 +19,6 @@
             android:id="@+id/stageTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Stage 1/5"
             android:textSize="14sp" />
 
         <Space

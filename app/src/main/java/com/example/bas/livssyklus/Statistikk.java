@@ -16,16 +16,14 @@ public class Statistikk extends AppCompatActivity {
         TextView riktigText = (TextView)findViewById(R.id.riktig);
         TextView galtText = (TextView)findViewById(R.id.galt);
         Resources res = getResources();
-        final String[] saveData  = res.getStringArray(R.array.result);
 
         displayScore(riktigText,galtText);
-
 
     }
 
     public void displayScore(TextView riktigText, TextView galtText){
-        SharedPreferences prefs = getSharedPreferences("Resultat",Spill.MODE_PRIVATE);
-        int riktig = prefs.getInt("antallRiktig", -1);
+        SharedPreferences prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
+        int riktig = prefs.getInt("antallRiktig",0);
         riktigText.setText(String.valueOf(riktig));
         int galt = prefs.getInt("antallGalt", 0);
         galtText.setText(String.valueOf(galt));
