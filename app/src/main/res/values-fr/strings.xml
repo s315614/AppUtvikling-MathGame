@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MathJeux</string>
+    <string name="start_spill">Joue</string>
+    <string name="se_statistikk">statistiques</string>
+    <string name="preferanser">préférences</string>
+    <string name="riktig">Vrai</string>
+    <string name="galt">Faux</string>
+    <string name="buttonSlett">EFFACE</string>
+    <string name="buttonSvar">entre</string>
+    <string name="mainLogo">MATHJEUX</string>
+    <string name="prefereseTekst">Nombre de questions</string>
+    <string name="easyKnapp">FACILE-5</string>
+    <string name="mediumKnapp">MOYEN-10</string>
+    <string name="hardKnapp">DEFFICILE-25</string>
+
+</resources>
