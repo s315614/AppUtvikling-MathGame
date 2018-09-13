@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
-    
-
-
 
 
     <TextView
@@ -16,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="37dp"
         android:background="@android:color/holo_green_light"
-        android:text="MATHSPILL"
+        android:text="@string/mainLogo"
         android:textAlignment="center"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"

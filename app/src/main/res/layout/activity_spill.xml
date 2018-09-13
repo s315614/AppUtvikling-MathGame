@@ -67,7 +67,7 @@
                     android:id="@+id/riktig"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Riktig"
+                    android:text="@string/riktig"
                     android:textAlignment="center" />
 
                 <TextView
@@ -89,7 +89,7 @@
                     android:id="@+id/galt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Galt"
+                    android:text="@string/galt"
                     android:textAlignment="center" />
 
                 <TextView
@@ -201,7 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Slett" />
+                    android:text="@string/buttonSlett" />
 
                 <Button
                     android:id="@+id/button0"
@@ -215,7 +215,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Svar" />
+                    android:text="@string/buttonSvar" />
             </LinearLayout>
 
         </LinearLayout>

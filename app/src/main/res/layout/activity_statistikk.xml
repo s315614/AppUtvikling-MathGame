@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Riktig" />
+                android:text="@string/riktig" />
 
             <TextView
                 android:id="@+id/riktig"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Galt" />
+                android:text="@string/galt" />
 
             <TextView
                 android:id="@+id/galt"
