@@ -7,7 +7,7 @@
     tools:context=".Preferenser">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/preferenseTekst"
         android:layout_width="241dp"
         android:layout_height="37dp"
         android:layout_alignParentTop="true"
