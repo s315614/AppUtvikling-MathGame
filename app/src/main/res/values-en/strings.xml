@@ -3,12 +3,12 @@
     <string name="start_spill">Play</string>
     <string name="se_statistikk">Statistics</string>
     <string name="preferanser">Preferences</string>
-    <string name="riktig">Right</string>
-    <string name="galt">Wrong</string>
+    <string name="riktig">Right: </string>
+    <string name="galt">Wrong: </string>
     <string name="buttonSlett">DELETE</string>
     <string name="buttonSvar">ENTER</string>
     <string name="mainLogo">MATHGAME</string>
-    <string name="prefereseTekst">number of questions</string>
+    <string name="prefereseTekst">Choose number of questions</string>
     <string name="easyKnapp">EASY-5</string>
     <string name="mediumKnapp">MEDIUM-10</string>
     <string name="hardKnapp">HARD-25</string>

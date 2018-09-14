@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Hoved"
-    android:background="@color/colorBackground"
-    >
+    android:background="#9aed97"
+    tools:context=".Hoved">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,37 +18,42 @@
             android:id="@+id/stageTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp" />
+            android:fontFamily="@font/special_elite"
+            android:textSize="16sp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="44dp" />
+            android:layout_height="12dp" />
 
         <TextView
             android:id="@+id/outputTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/bungee_shade"
             android:text="2x2"
             android:textAlignment="center"
-            android:textSize="42sp" />
+            android:textColor="#3d0366"
+            android:textSize="42sp"
+            android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="24dp" />
+            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/inputTxt"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:background="@color/colorWhite"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/shojumaru"
             android:maxLength="10"
             android:textAlignment="center"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="33dp" />
+            android:layout_height="20dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,7 +63,7 @@
             <LinearLayout
                 android:layout_width="176dp"
                 android:layout_height="66dp"
-                android:background="@color/colorWhite"
+                android:background="@android:color/transparent"
                 android:orientation="vertical">
 
 
@@ -67,6 +71,7 @@
                     android:id="@+id/riktig"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/special_elite"
                     android:text="@string/riktig"
                     android:textAlignment="center" />
 
@@ -74,6 +79,7 @@
                     android:id="@+id/riktigText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/special_elite"
                     android:text="0"
                     android:textAlignment="center"
                     android:textSize="24sp" />
@@ -82,13 +88,14 @@
             <LinearLayout
                 android:layout_width="178dp"
                 android:layout_height="66dp"
-                android:background="@color/colorWhite"
+                android:background="@android:color/transparent"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/galt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/special_elite"
                     android:text="@string/galt"
                     android:textAlignment="center" />
 
@@ -96,6 +103,7 @@
                     android:id="@+id/galtText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/special_elite"
                     android:text="0"
                     android:textAlignment="center"
                     android:textSize="24sp" />
@@ -105,7 +113,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="@android:drawable/screen_background_light_transparent"
             android:orientation="vertical">
 
             <LinearLayout
@@ -118,21 +126,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1" />
+                    android:fontFamily="@font/shojumaru"
+                    android:text="1"
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2" />
+                    android:text="2"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="3" />
+                    android:text="3"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -146,21 +160,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4" />
+                    android:text="4"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="5" />
+                    android:text="5"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="6" />
+                    android:text="6"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -174,21 +194,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="7" />
+                    android:text="7"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/button8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="8" />
+                    android:text="8"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/button9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="9" />
+                    android:text="9"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -201,21 +227,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/buttonSlett" />
+                    android:text="@string/buttonSlett"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/button0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="0" />
+                    android:text="0"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
 
                 <Button
                     android:id="@+id/buttonSvar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/buttonSvar" />
+                    android:text="@string/buttonSvar"
+                    android:fontFamily="@font/shojumaru"
+                    android:textSize="16sp"/>
             </LinearLayout>
 
         </LinearLayout>

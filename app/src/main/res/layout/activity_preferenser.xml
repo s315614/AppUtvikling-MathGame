@@ -4,42 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#dfcbed"
     tools:context=".Preferenser">
 
-    <TextView
-        android:id="@+id/preferenseTekst"
-        android:layout_width="241dp"
-        android:layout_height="37dp"
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="61dp"
-        android:text="@string/prefereseTekst"
-        android:textSize="18sp" />
+        android:layout_marginTop="46dp">
 
-    <Button
-        android:id="@+id/easyKnapp"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/preferenseTekst"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1"
+            android:fontFamily="@font/special_elite"
+            android:text="@string/prefereseTekst"
+            android:textSize="18sp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="181dp"
-        android:text="@string/easyKnapp" />
+        android:layout_marginTop="136dp">
 
-    <Button
-        android:id="@+id/mediumKnapp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="237dp"
-        android:text="@string/mediumKnapp" />
+        <Button
+            android:id="@+id/easyKnapp"
+            android:layout_width="42dp"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="#d6a0db"
+            android:fontFamily="@font/shojumaru"
+            android:text="@string/easyKnapp" />
 
-    <Button
-        android:id="@+id/hardKnapp"
-        android:layout_width="94dp"
-        android:layout_height="wrap_content"
+        <FrameLayout
+            android:id="@+id/lightImage"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/onefeather" />
+        </FrameLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="113dp"
-        android:text="@string/hardKnapp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="136dp">
+
+        <Button
+            android:id="@+id/mediumKnapp"
+            android:layout_width="42dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="#d6a0db"
+            android:fontFamily="@font/shojumaru"
+            android:text="@string/mediumKnapp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/twofeathers" />
+        </FrameLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/hardKnapp"
+            android:layout_width="42dp"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:background="#d6a0db"
+            android:fontFamily="@font/shojumaru"
+            android:text="@string/hardKnapp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/threefeathers" />
+        </FrameLayout>
+
+    </TableRow>
 </RelativeLayout>
