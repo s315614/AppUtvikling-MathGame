@@ -12,5 +12,9 @@
     <string name="easyKnapp">EASY-5</string>
     <string name="mediumKnapp">MEDIUM-10</string>
     <string name="hardKnapp">HARD-25</string>
+    <string name="exit">Exit</string>
+    <string name="exit_tekst">Do you want to exit the game?</string>
+    <string name="avslutt">Exit</string>
+    <string name="avbryt">Cancel</string>
 
 </resources>

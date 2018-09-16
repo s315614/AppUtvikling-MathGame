@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MathSpill</string>
+    <string name="start_spill">Spielen</string>
+    <string name="se_statistikk">Statistik</string>
+    <string name="preferanser">Präferenz</string>
+    <string name="riktig">richtig: </string>
+    <string name="galt">falsch: </string>
+    <string name="buttonSlett">löschen</string>
+    <string name="buttonSvar">Enter</string>
+    <string name="mainLogo">MATHESPIEL</string>
+    <string name="prefereseTekst">wähle die Anzahl der Fragen</string>
+    <string name="easyKnapp">LEICHT-5</string>
+    <string name="mediumKnapp">MITTEL-10</string>
+    <string name="hardKnapp">SCHWER-25</string>
+    <string name="exit">Ausgang</string>
+    <string name="exit_tekst">Möchtest du das Spiel beenden?</string>
+    <string name="avslutt">Ausgang</string>
+    <string name="avbryt">stornieren</string>
+
+</resources>

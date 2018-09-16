@@ -198,11 +198,16 @@ public class Spill extends AppCompatActivity {
         //Toast.makeText(getApplication(),"Hello",Toast.LENGTH_LONG).show();
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Exit");
-        builder.setMessage("Vil du gå ut av spillet?");
+        String exit = getResources().getString(R.string.exit);
+        String exitTekst = getResources().getString(R.string.exit_tekst);
+        String avslutt = getResources().getString(R.string.avslutt);
+        String avbryt = getResources().getString(R.string.avbryt);
+
+        builder.setTitle(exit);
+        builder.setMessage(exitTekst);
 
 
-        builder.setPositiveButton("Avslutt", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(avslutt, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent goToMain = new Intent(getApplicationContext(), Hoved.class);
@@ -211,7 +216,7 @@ public class Spill extends AppCompatActivity {
             }
 
         });
-        builder.setNegativeButton("Avbrytt", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(avbryt, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

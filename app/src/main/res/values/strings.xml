@@ -12,5 +12,9 @@
     <string name="easyKnapp">LETT-5</string>
     <string name="mediumKnapp">MEDIUM-10</string>
     <string name="hardKnapp">HARD-25</string>
+    <string name="exit">Exit</string>
+    <string name="exit_tekst">Vil du gå ut av spillet?</string>
+    <string name="avslutt">Avslutt</string>
+    <string name="avbryt">Avbryt</string>
 
 </resources>
