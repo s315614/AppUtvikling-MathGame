@@ -161,8 +161,8 @@ public class Spill extends AppCompatActivity {
                         }else galt+=1;
 
                         questionUpdate(outputText, questions,a, inputText);
-                        Toast.makeText(Spill.this,String.valueOf("Riktig: "+ riktig+" Galt: "+galt),Toast.LENGTH_LONG).show();
-                        Toast.makeText(Spill.this,String.valueOf(String.valueOf(mode)),Toast.LENGTH_LONG).show();
+                        //Toast.makeText(Spill.this,String.valueOf("Riktig: "+ riktig+" Galt: "+galt),Toast.LENGTH_LONG).show();
+                        //Toast.makeText(Spill.this,String.valueOf(String.valueOf(mode)),Toast.LENGTH_LONG).show();
                         stage +=1;
                         stageText.setText(String.valueOf("Stage "+stage+ "/"+String.valueOf(mode)));
 
@@ -176,9 +176,10 @@ public class Spill extends AppCompatActivity {
                         }else galt+=1;
                         list.remove(list.size()-1);
                         lagreDataene(riktig,galt);
-                        Intent goToMain = new Intent(getApplicationContext(), Hoved.class);
-                        startActivity(goToMain);
+                        Intent goToResultat = new Intent(getApplicationContext(), Resultat.class);
+                        startActivity(goToResultat);
                         finish();
+
                     }
 
                     else{

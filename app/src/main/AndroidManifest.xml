@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".Spill" />
         <activity android:name=".Preferenser" />
+        <activity android:name=".Resultat" />
+
         <activity android:name=".Statistikk"></activity>
 
         <meta-data

@@ -15,7 +15,6 @@ public class Statistikk extends AppCompatActivity {
 
         TextView riktigText = (TextView)findViewById(R.id.riktig);
         TextView galtText = (TextView)findViewById(R.id.galt);
-        Resources res = getResources();
 
         displayScore(riktigText,galtText);
 
