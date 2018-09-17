@@ -10,38 +10,48 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:background="@android:color/holo_green_light"
-        android:text="@string/mainLogo"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:typeface="normal" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="204dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="46dp">
-
-        <ImageView
-            android:id="@+id/imageView"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fadingEdge="horizontal|vertical"
-            android:fadingEdgeLength="100dp"
-            android:requiresFadingEdge="horizontal|vertical"
-            app:srcCompat="@drawable/maths" />
-    </FrameLayout>
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:background="@android:color/holo_green_light"
+            android:fontFamily="@font/shojumaru"
+            android:text="@string/mainLogo"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:typeface="normal" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadingEdge="horizontal|vertical"
+                android:fadingEdgeLength="100dp"
+                android:requiresFadingEdge="horizontal|vertical"
+                app:srcCompat="@drawable/maths" />
+        </FrameLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="243dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:orientation="vertical">

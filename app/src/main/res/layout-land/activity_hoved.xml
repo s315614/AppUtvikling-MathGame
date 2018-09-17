@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_light"
@@ -10,93 +9,128 @@
     android:orientation="vertical">
 
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="37dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/holo_green_light"
+        android:fontFamily="@font/shojumaru"
         android:text="@string/mainLogo"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="24sp"
+        android:textColor="#185953"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="normal" />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="204dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="46dp">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fadingEdge="horizontal|vertical"
-            android:fadingEdgeLength="100dp"
-            android:requiresFadingEdge="horizontal|vertical"
-            app:srcCompat="@drawable/maths" />
-    </FrameLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="243dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <TableRow
-            android:id="@+id/spillRad"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/spillKnapp"
-                style="?android:attr/buttonBarButtonStyle"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/shojumaru"
-                android:text="@string/start_spill"
-                android:textAlignment="center"
-                android:textColor="#185953"
-                android:textSize="22sp" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp">
 
-        </TableRow>
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadingEdge="horizontal|vertical"
+                    android:requiresFadingEdge="horizontal|vertical"
+                    app:srcCompat="@drawable/maths" />
+            </FrameLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
+        </LinearLayout>
 
-            <Button
-                android:id="@+id/statistikkKnapp"
-                style="?android:attr/buttonBarButtonStyle"
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/shojumaru"
-                android:text="@string/se_statistikk"
-                android:textAlignment="center"
-                android:textColor="#185953"
-                android:textSize="22sp" />
+                android:layout_height="40dp" />
 
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/preferanserRad"
-            android:layout_width="match_parent"
-            android:layout_height="70dp">
-
-            <Button
-                android:id="@+id/preferanserKnapp"
-                style="?android:attr/buttonBarButtonStyle"
+            <TableRow
+                android:id="@+id/spillRad"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/shojumaru"
-                android:text="@string/preferanser"
-                android:textAlignment="center"
-                android:textColor="#185953"
-                android:textSize="22sp" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
 
-        </TableRow>
+                <Button
+                    android:id="@+id/spillKnapp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shojumaru"
+                    android:text="@string/start_spill"
+                    android:textAlignment="center"
+                    android:textColor="#185953"
+                    android:textSize="22sp" />
+
+            </TableRow>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TableRow
+                android:id="@+id/statistikkRad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <Button
+                    android:id="@+id/statistikkKnapp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shojumaru"
+                    android:text="@string/se_statistikk"
+                    android:textAlignment="center"
+                    android:textColor="#185953"
+                    android:textSize="22sp" />
+
+            </TableRow>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TableRow
+                android:id="@+id/preferanserRad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <Button
+                    android:id="@+id/preferanserKnapp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/shojumaru"
+                    android:text="@string/preferanser"
+                    android:textAlignment="center"
+                    android:textColor="#185953"
+                    android:textSize="22sp" />
+
+            </TableRow>
+        </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+
+</LinearLayout>

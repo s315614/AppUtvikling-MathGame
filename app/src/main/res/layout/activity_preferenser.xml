@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/special_elite"
             android:text="@string/prefereseTekst"
-            android:textSize="18sp" />
+            android:textSize="22sp" />
     </TableRow>
 
     <TableRow
@@ -42,7 +42,8 @@
             android:layout_weight="1"
             android:background="#d6a0db"
             android:fontFamily="@font/shojumaru"
-            android:text="@string/easyKnapp" />
+            android:text="@string/easyKnapp"
+            android:textSize="20sp" />
 
         <FrameLayout
             android:id="@+id/lightImage"
@@ -63,7 +64,7 @@
         android:layout_height="130dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="136dp">
+        android:layout_marginBottom="151dp">
 
         <Button
             android:id="@+id/mediumKnapp"
@@ -74,7 +75,8 @@
             android:layout_weight="1"
             android:background="#d6a0db"
             android:fontFamily="@font/shojumaru"
-            android:text="@string/mediumKnapp" />
+            android:text="@string/mediumKnapp"
+            android:textSize="20sp" />
 
         <FrameLayout
             android:layout_width="0dp"
@@ -104,7 +106,8 @@
             android:layout_weight="1"
             android:background="#d6a0db"
             android:fontFamily="@font/shojumaru"
-            android:text="@string/hardKnapp" />
+            android:text="@string/hardKnapp"
+            android:textSize="20sp" />
 
         <FrameLayout
             android:layout_width="0dp"
