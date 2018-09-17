@@ -18,6 +18,8 @@ public class Resultat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultat);
+        GifImage gifImageView = (GifImage) findViewById(R.id.GifImageView);
+        gifImageView.setGifImageResource(R.drawable.giphy);
 
         riktig = (TextView)findViewById(R.id.riktig);
         galt = (TextView)findViewById(R.id.galt);
