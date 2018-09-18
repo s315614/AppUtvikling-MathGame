@@ -180,7 +180,6 @@ public class Spill extends AppCompatActivity {
                         Intent goToResultat = new Intent(getApplicationContext(), Resultat.class);
                         startActivity(goToResultat);
                         finish();
-
                     }
 
                     else{
@@ -195,6 +194,11 @@ public class Spill extends AppCompatActivity {
 
     }
 
+    //Override metode som tilkaller en AlertDialog når man trykker på tilbakeknappen(onBackPressed())
+    //På AlertDialog så kommer det opp to alternativsknapper(positiv/negativ)
+    //Om man trykker på negativ så fjerner man AlertDialog og ingenting annet skjer
+    //Dersom man trykker på positiv så blir en ny Intent Activity opprettet og blir startet
+    //Navigasjon ved trykk
     @Override
     public void onBackPressed() {
         //Toast.makeText(getApplication(),"Hello",Toast.LENGTH_LONG).show();
@@ -208,7 +212,6 @@ public class Spill extends AppCompatActivity {
         builder.setTitle(exit);
         builder.setMessage(exitTekst);
 
-
         builder.setPositiveButton(avslutt, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -216,20 +219,20 @@ public class Spill extends AppCompatActivity {
                 startActivity(goToMain);
                 finish();
             }
-
         });
         builder.setNegativeButton(avbryt, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
             }
         });
         AlertDialog dialog = builder.show();
     }
 
+    //Metode for å oppbevare nåværende tilstand, når man går i f.eks landscape modus
+    //Dersom man går i landscape modus så blir alle våre ønskende dataer puttet inn i en (Bundle) outState med spesielle (String)key
+    //Bruker onSaveInstanceState for å oppbevare Bundle
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
 
         outState.putString("inputText", inputText.getText().toString());
         outState.putString("outputText", outputText.getText().toString());
@@ -241,11 +244,12 @@ public class Spill extends AppCompatActivity {
         outState.putInt("Riktig", riktig);
         outState.putIntegerArrayList("List",list);
 
-
-
         super.onSaveInstanceState(outState);
     }
 
+    //Metode for å oppbevare nåværende tilstand, når man går i f.eks landscape modus
+    //Dersom man går i landscape modus så blir alle våre ønskende dataer puttet inn i en (Bundle) outState
+    //Bruker onSaveInstanceState for å oppbevare Bundle
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -262,7 +266,8 @@ public class Spill extends AppCompatActivity {
     }
 
 
-
+    //Metode som lagrer to dataer ved hjelp av SharedPreferences
+    //Det blir puttet inn to av type (int) variabler i Sharedpreferences editor
     public void lagreDataene(int riktig, int galt){
         SharedPreferences prefs = getApplication().getSharedPreferences("Resultat",MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -272,6 +277,9 @@ public class Spill extends AppCompatActivity {
 
     }
 
+    //Metode som tar for seg brukervalidering
+    //Sjekker dermed om TextView har ingen verdi(blank)
+    //Returnerer (boolean) true eller false;
     public boolean validationSuccess(TextView text){
         boolean check;
         if(text.getText().toString() != "") {
@@ -300,12 +308,19 @@ public class Spill extends AppCompatActivity {
         return check;
     }
 
+    //Metode som endrer/oppdaterer et TextView med et nytt String-array objekt ved bruk av et (int)indeks og en (String[]) array
+    //Oppdaterer TextView og gjør om et annet TextView til blank
     public void questionUpdate(TextView text, String[] array, int value, TextView input) {
         text.setText(String.valueOf(array[value]));
         input.setText(String.valueOf(""));
 
     }
 
+    //Metode som først generere et tall, deretter så sjekker om det tallet eksisterer i det Arraylist man oppgir
+    //Tar i bruk andre metoder som generateRandomInt() og existBefore()
+    //Dersom tallet allerede finnes så blir det generert et nytt tall og gjentar prosessen
+    //Om tallet ikke finnes i Arraylist, så blir tallet lagt inn i Arraylist
+    //Returnerer (int) dette tallet
     public int generateRandomInt(ArrayList<Integer> list) {
         int value = generateRandomInt();
         while(existBefore(list, value)){
@@ -315,17 +330,24 @@ public class Spill extends AppCompatActivity {
         return value;
     }
 
+    //Metode som sjekker om et nummer allerede finnes i en arraylist
+    //Returnerer (boolean) true eller false
     public boolean existBefore(ArrayList<Integer> list, int number) {
         if(list.contains(number))return true;
         return false;
     }
 
+    //Metode som generere et tall i mellom 0 og 25
+    //Returnerer (int) dette tallet
     public int generateRandomInt() {
         Random r = new Random();
         int value = r.nextInt((25 - 0) + 1) + 0;
         return value;
     }
 
+    //Metode som genererer et tall og legger det i en Arraylist
+    //I tilegg så blir dette tallet brukt som en indeks i et String array med spørsmålene
+    //Skriver ut et spørsmål til et TextView
     public void generateAtStart(ArrayList<Integer>list, String[] array, TextView text){
         int tall = generateRandomInt();
         list.add(tall);
