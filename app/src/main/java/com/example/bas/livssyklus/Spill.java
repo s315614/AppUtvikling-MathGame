@@ -17,14 +17,19 @@ import java.util.Random;
 
 public class Spill extends AppCompatActivity {
 
+    TextView riktigText, galtText, stageText, inputText, outputText;
+    int stage = 1;
+    int galt = 0;
+    int riktig = 0;
+    ArrayList<Integer> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spill);
 
-        final TextView inputText = (TextView) findViewById(R.id.inputTxt);
-        final TextView outputText = (TextView) findViewById(R.id.outputTxt);
+        inputText = (TextView) findViewById(R.id.inputTxt);
+        outputText = (TextView) findViewById(R.id.outputTxt);
 
         Resources res = getResources();
         final String[] questions  = res.getStringArray(R.array.questions);
@@ -138,16 +143,12 @@ public class Spill extends AppCompatActivity {
 
 
         Button buttonSvar = (Button) findViewById(R.id.buttonSvar);
-        final TextView riktigText = (TextView)findViewById(R.id.riktigText);
-        final TextView galtText = (TextView)findViewById(R.id.galtText);
-        final TextView stageText = (TextView)findViewById(R.id.stageTxt);
+        riktigText = (TextView)findViewById(R.id.riktigText);
+        galtText = (TextView)findViewById(R.id.galtText);
+        stageText = (TextView)findViewById(R.id.stageTxt);
         stageText.setText(String.valueOf("Stage 1/"+String.valueOf(mode)));
 
         buttonSvar.setOnClickListener(new View.OnClickListener() {
-
-            int stage = 1;
-            int riktig = 0;
-            int galt = 0;
 
             @Override
             public void onClick(View v) {
@@ -225,6 +226,42 @@ public class Spill extends AppCompatActivity {
         });
         AlertDialog dialog = builder.show();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+
+
+        outState.putString("inputText", inputText.getText().toString());
+        outState.putString("outputText", outputText.getText().toString());
+        outState.putString("stageText", stageText.getText().toString());
+        outState.putString("riktigText", riktigText.getText().toString());
+        outState.putString("galtText",galtText.getText().toString());
+        outState.putInt("Stage", stage);
+        outState.putInt("Galt",galt);
+        outState.putInt("Riktig", riktig);
+        outState.putIntegerArrayList("List",list);
+
+
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        inputText.setText(savedInstanceState.getString("inputText"));
+        outputText.setText(savedInstanceState.getString("outputText"));
+        stageText.setText(savedInstanceState.getString("stageText"));
+        riktigText.setText(savedInstanceState.getString("riktigText"));
+        galtText.setText(savedInstanceState.getString("galtText"));
+        stage = savedInstanceState.getInt("Stage");
+        galt = savedInstanceState.getInt("Galt");
+        riktig = savedInstanceState.getInt("Riktig");
+        list = savedInstanceState.getIntegerArrayList("List");
+    }
+
+
 
     public void lagreDataene(int riktig, int galt){
         SharedPreferences prefs = getApplication().getSharedPreferences("Resultat",MODE_PRIVATE);
