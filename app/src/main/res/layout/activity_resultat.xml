@@ -62,8 +62,10 @@
                 android:id="@+id/riktigText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/special_elite"
                 android:text="@string/riktig"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="22sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -73,8 +75,11 @@
                 android:id="@+id/riktig"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/shojumaru"
                 android:text="0"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,8 +91,10 @@
                 android:id="@+id/galtText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/special_elite"
                 android:text="@string/galt"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="22sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -97,8 +104,11 @@
                 android:id="@+id/galt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/shojumaru"
                 android:text="0"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
 

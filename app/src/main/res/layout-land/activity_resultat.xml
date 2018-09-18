@@ -34,19 +34,21 @@
 
                 <FrameLayout
                     android:layout_width="240dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingLeft="85dp">
 
                     <com.example.bas.livssyklus.GifImage
                         android:id="@+id/GifImageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="240dp"
+                        android:layout_height="140dp"
                         android:layout_centerInParent="true"
                         android:background="@drawable/giphy" />
                 </FrameLayout>
 
                 <FrameLayout
                     android:layout_width="240dp"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:paddingRight="45dp">
 
                     <com.example.bas.livssyklus.GifImage
                         android:id="@+id/gifImageView"
@@ -66,44 +68,56 @@
                     android:layout_width="240dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/riktigText"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/special_elite"
                         android:text="@string/riktig"
-                        android:textAlignment="center" />
+                        android:textAlignment="textEnd"
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/riktig"
-                        android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_width="140dp"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/shojumaru"
+                        android:paddingLeft="10dp"
                         android:text="0"
-                        android:textAlignment="center" />
+                        android:textAlignment="textStart"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="22sp" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="240dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/galtText"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/special_elite"
                         android:text="@string/galt"
-                        android:textAlignment="center" />
+                        android:textAlignment="textEnd"
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/galt"
-                        android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/shojumaru"
+                        android:paddingLeft="10dp"
                         android:text="0"
-                        android:textAlignment="center" />
+                        android:textAlignment="viewStart"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="22sp" />
                 </LinearLayout>
 
             </LinearLayout>
