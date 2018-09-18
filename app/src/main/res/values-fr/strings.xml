@@ -12,5 +12,12 @@
     <string name="easyKnapp">FACILE-5</string>
     <string name="mediumKnapp">MOYEN-10</string>
     <string name="hardKnapp">DEFFICILE-25</string>
+    <string name="exit">Sortie</string>
+    <string name="exit_tekst">Voulez-vous sortir?</string>
+    <string name="avslutt">Sortie</string>
+    <string name="avbryt">Annuler</string>
+    <string name="resultat">Résultat</string>
+    <string name="restart">Redémarrer</string>
+    <string name="main_menu">Menu</string>
 
 </resources>

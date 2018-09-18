@@ -1,60 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tool="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Resultat"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundresult"
+    android:orientation="vertical"
+    tools:context=".Resultat">
 
-    <com.example.bas.livssyklus.GifImage
-        android:id="@+id/GifImageView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/giphy" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Resultat"
+        android:text="@string/resultat"
         android:textAlignment="center"
         android:textSize="42dp" />
 
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </FrameLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="106dp"
+        android:layout_height="179dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="181dp"
-            android:layout_height="match_parent"
+            android:layout_width="480dp"
+            android:layout_height="179dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/riktigText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Riktig"
-                android:textAlignment="center" />
+                android:layout_height="140dp"
+                android:orientation="horizontal">
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="21dp" />
+                <FrameLayout
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/riktig"
+                    <com.example.bas.livssyklus.GifImage
+                        android:id="@+id/GifImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/giphy" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent">
+
+                    <com.example.bas.livssyklus.GifImage
+                        android:id="@+id/gifImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/giphy" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:textAlignment="center" />
+                android:layout_height="39dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/riktigText"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="@string/riktig"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/riktig"
+                        android:layout_width="match_parent"
+                        android:layout_height="19dp"
+                        android:text="0"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/galtText"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:text="@string/galt"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/galt"
+                        android:layout_width="match_parent"
+                        android:layout_height="19dp"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -62,59 +115,36 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/galtText"
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/restartBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Galt"
-                android:textAlignment="center" />
+                android:layout_weight="1"
+                android:text="@string/restart" />
 
             <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/galt"
+            <Button
+                android:id="@+id/mainMenuBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textAlignment="center" />
+                android:layout_weight="1"
+                android:text="@string/main_menu" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/restartBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Restart" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/mainMenuBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Main Menu" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
     </LinearLayout>
 

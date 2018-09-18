@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MathSpill</string>
     <string name="start_spill">Start Spill</string>
-    <string name="se_statistikk">Se Statistikk</string>
+    <string name="se_statistikk">Statistikk</string>
     <string name="preferanser">Preferanser</string>
     <string name="riktig">Riktig: </string>
     <string name="galt">Galt: </string>
@@ -16,5 +16,8 @@
     <string name="exit_tekst">Vil du gå ut av spillet?</string>
     <string name="avslutt">Avslutt</string>
     <string name="avbryt">Avbryt</string>
+    <string name="resultat">Resultat</string>
+    <string name="restart">Prøv igjen</string>
+    <string name="main_menu">Hovedmeny</string>
 
 </resources>

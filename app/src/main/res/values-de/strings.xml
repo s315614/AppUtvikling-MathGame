@@ -16,5 +16,8 @@
     <string name="exit_tekst">Möchtest du das Spiel beenden?</string>
     <string name="avslutt">Ausgang</string>
     <string name="avbryt">stornieren</string>
+    <string name="resultat">Ergebnis</string>
+    <string name="restart">Neustart</string>
+    <string name="main_menu">Hauptmenü</string>
 
 </resources>

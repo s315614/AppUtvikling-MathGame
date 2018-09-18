@@ -16,5 +16,8 @@
     <string name="exit_tekst">Do you want to exit the game?</string>
     <string name="avslutt">Exit</string>
     <string name="avbryt">Cancel</string>
+    <string name="resultat">Result</string>
+    <string name="restart">Try again</string>
+    <string name="main_menu">Main menu</string>
 
 </resources>

@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tool="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Resultat"
-    android:orientation="vertical">
-
-    <com.example.bas.livssyklus.GifImage
-        android:id="@+id/GifImageView"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/giphy" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundresult"
+    android:orientation="vertical"
+    tools:context=".Resultat">
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Resultat"
+        android:text="@string/resultat"
         android:textAlignment="center"
         android:textSize="42dp" />
 
-    <FrameLayout
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="299dp">
+        android:layout_height="wrap_content">
 
-    </FrameLayout>
+        <FrameLayout
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="30dp">
+
+            <com.example.bas.livssyklus.GifImage
+                android:id="@+id/gifImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/giphy" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="188dp"
+            android:paddingRight="30dp">
+
+            <com.example.bas.livssyklus.GifImage
+                android:id="@+id/GifImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/giphy" />
+        </FrameLayout>
+    </TableRow>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +62,7 @@
                 android:id="@+id/riktigText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Riktig"
+                android:text="@string/riktig"
                 android:textAlignment="center" />
 
             <Space
@@ -67,7 +86,7 @@
                 android:id="@+id/galtText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Galt"
+                android:text="@string/galt"
                 android:textAlignment="center" />
 
             <Space
@@ -98,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Restart" />
+            android:text="@string/restart" />
 
         <Space
             android:layout_width="wrap_content"
@@ -110,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Main Menu" />
+            android:text="@string/main_menu" />
 
         <Space
             android:layout_width="wrap_content"
