@@ -34,9 +34,8 @@ public class Spill extends AppCompatActivity {
         Resources res = getResources();
         final String[] questions  = res.getStringArray(R.array.questions);
         final String[] answers  = res.getStringArray(R.array.answers);
-        final ArrayList<Integer> list = new ArrayList<>();
         final SharedPreferences prefs = getSharedPreferences("Modus", MODE_PRIVATE);
-        final int mode = prefs.getInt("Mode", 25);
+        final int mode = prefs.getInt("Mode", 5);
 
         generateAtStart(list,questions,outputText);
 
@@ -159,7 +158,10 @@ public class Spill extends AppCompatActivity {
                         boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
                         if(check){
                             riktig+=1;
-                        }else galt+=1;
+
+                        }else{
+                            galt+=1;
+                        }
 
                         questionUpdate(outputText, questions,a, inputText);
                         //Toast.makeText(Spill.this,String.valueOf("Riktig: "+ riktig+" Galt: "+galt),Toast.LENGTH_LONG).show();
@@ -289,7 +291,6 @@ public class Spill extends AppCompatActivity {
         }
         return check;
     }
-
 
     public boolean checkQuestion(TextView input, String[] svarliste, ArrayList<Integer> list, TextView riktigText, TextView galtText){
         boolean check;

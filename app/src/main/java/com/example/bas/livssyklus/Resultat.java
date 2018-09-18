@@ -1,5 +1,7 @@
 package com.example.bas.livssyklus;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -48,6 +50,38 @@ public class Resultat extends AppCompatActivity {
         displayScore(riktig,galt);
 
 
+    }
+
+    //Override metode som tilkaller en AlertDialog når man trykker på tilbakeknappen(onBackPressed())
+    //På AlertDialog så kommer det opp to alternativsknapper(positiv/negativ)
+    //Om man trykker på negativ så fjerner man AlertDialog og ingenting annet skjer
+    //Dersom man trykker på positiv så blir en ny Intent Activity opprettet og blir startet
+    //Navigasjon ved trykk
+    @Override
+    public void onBackPressed() {
+        //Toast.makeText(getApplication(),"Hello",Toast.LENGTH_LONG).show();
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        String exit = getResources().getString(R.string.exit);
+        String exitTekst = getResources().getString(R.string.exit_tekst);
+        String avslutt = getResources().getString(R.string.avslutt);
+        String avbryt = getResources().getString(R.string.avbryt);
+
+        builder.setTitle(exit);
+        builder.setMessage(exitTekst);
+
+        builder.setPositiveButton(avslutt, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton(avbryt, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        AlertDialog dialog = builder.show();
     }
 
 
