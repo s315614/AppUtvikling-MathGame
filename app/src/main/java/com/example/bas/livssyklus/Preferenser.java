@@ -18,7 +18,8 @@ import java.util.Locale;
 public class Preferenser extends AppCompatActivity {
     TextView languageId, norskLanguage,tyskLanguage, preferenseTekst;
     Button easyKnapp, mediumKnapp, hardKnapp;
-    String languageToLoad;
+    public String languageToLoad;
+
 
 
     @Override
@@ -39,6 +40,7 @@ public class Preferenser extends AppCompatActivity {
 
         Switch switch1 = (Switch)findViewById(R.id.switch1);
         Boolean value = true;
+
         final SharedPreferences sharedPreferences = getSharedPreferences("isChecked", 0);
         value = sharedPreferences.getBoolean("isChecked", value);
         switch1.setChecked(value);
@@ -139,7 +141,7 @@ public class Preferenser extends AppCompatActivity {
 
 
         super.onSaveInstanceState(outState);
-
+        //startActivity(getIntent());
     }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -154,6 +156,16 @@ public class Preferenser extends AppCompatActivity {
         hardKnapp.setText(savedInstanceState.getString("hardKnapp"));
 
         String keepLanguage = savedInstanceState.getString(languageToLoad);
+
+
+    }
+
+    @Override
+    public void onBackPressed(){
+
+        Intent goToMain = new Intent(getApplicationContext(), Hoved.class);
+        startActivity(goToMain);
+        finish();
 
     }
 
