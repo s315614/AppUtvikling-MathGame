@@ -8,41 +8,83 @@
     android:orientation="vertical"
     tools:context=".Preferenser">
 
-    <Space
+    <TextView
+        android:id="@+id/languageId"
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/special_elite"
+        android:text="@string/language"
+        android:textAlignment="center"
+        android:textSize="22sp" />
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:paddingBottom="15dp">
+        android:paddingLeft="150dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            app:srcCompat="@drawable/tysk" />
 
         <TextView
-            android:id="@+id/preferenseTekst"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_weight="1"
-            android:fontFamily="@font/special_elite"
-            android:text="@string/prefereseTekst"
-            android:textAlignment="center"
-            android:textSize="26sp" />
+            android:id="@+id/norskLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/shojumaru"
+            android:paddingRight="2dp"
+            android:paddingTop="15dp"
+            android:text="@string/german"
+            android:textAlignment="textEnd"
+            android:textSize="12sp" />
 
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/tyskLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/shojumaru"
+            android:paddingLeft="5dp"
+            android:paddingTop="15dp"
+            android:text="@string/norsk"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/nork" />
     </TableRow>
 
-    <Space
+    <TextView
+        android:id="@+id/preferenseTekst"
         android:layout_width="match_parent"
-        android:layout_height="20dp" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1"
+        android:fontFamily="@font/special_elite"
+        android:text="@string/prefereseTekst"
+        android:textAlignment="center"
+        android:textSize="26sp" />
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:paddingBottom="15dp">
+        android:paddingBottom="5dp">
 
         <FrameLayout
             android:id="@+id/lightImage"
@@ -91,7 +133,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:paddingBottom="15dp">
+        android:paddingBottom="5dp">
 
         <FrameLayout
             android:layout_width="0dp"

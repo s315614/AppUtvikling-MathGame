@@ -19,5 +19,9 @@
     <string name="resultat">Ergebnis</string>
     <string name="restart">Neustart</string>
     <string name="main_menu">Hauptmenü</string>
+    <string name="language">Sprache wählen</string>
+    <string name="norsk">Norwegisch</string>
+    <string name="german">Deutsche</string>
+
 
 </resources>

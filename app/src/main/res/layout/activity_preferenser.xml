@@ -8,13 +8,14 @@
     tools:context=".Preferenser">
 
     <TextView
-        android:id="@+id/language"
+        android:id="@+id/languageId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/special_elite"
         android:text="@string/language"
         android:textSize="22sp" />
+
 
     <TableRow
         android:layout_width="match_parent"
@@ -23,20 +24,20 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="75dp"
+            android:layout_width="60dp"
             android:layout_height="50dp"
             android:layout_marginLeft="5dp"
-            app:srcCompat="@drawable/nork" />
+            app:srcCompat="@drawable/tysk" />
 
         <TextView
-            android:id="@+id/language"
+            android:id="@+id/norskLanguage"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:fontFamily="@font/shojumaru"
             android:paddingRight="2dp"
             android:paddingTop="15dp"
-            android:text="@string/norsk"
+            android:text="@string/german"
             android:textAlignment="textEnd"
             android:textSize="12sp" />
 
@@ -46,22 +47,23 @@
             android:layout_height="match_parent"
             android:paddingLeft="5dp" />
 
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tyskLanguage"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:fontFamily="@font/shojumaru"
             android:paddingLeft="5dp"
             android:paddingTop="15dp"
-            android:text="@string/german"
+            android:text="@string/norsk"
             android:textSize="12sp" />
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="75dp"
+            android:layout_width="60dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/tysk" />
+            app:srcCompat="@drawable/nork" />
 
     </TableRow>
 
