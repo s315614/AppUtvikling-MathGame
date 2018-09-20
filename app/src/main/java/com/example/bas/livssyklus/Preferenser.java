@@ -133,6 +133,7 @@ public class Preferenser extends AppCompatActivity {
         outState.putString("easyKnapp", easyKnapp.getText().toString());
         outState.putString("mediumKnapp", mediumKnapp.getText().toString());
         outState.putString("hardKnapp", hardKnapp.getText().toString());
+        outState.putString("languageToLoad", languageToLoad);
 
 
 
@@ -152,7 +153,12 @@ public class Preferenser extends AppCompatActivity {
         mediumKnapp.setText(savedInstanceState.getString("mediumKnapp"));
         hardKnapp.setText(savedInstanceState.getString("hardKnapp"));
 
+        String keepLanguage = savedInstanceState.getString(languageToLoad);
+
     }
+
+
+
 
 
 
