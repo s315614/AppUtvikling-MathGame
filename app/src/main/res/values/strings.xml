@@ -3,8 +3,10 @@
     <string name="start_spill">Start Spill</string>
     <string name="se_statistikk">Statistikk</string>
     <string name="preferanser">Preferanse</string>
-    <string name="riktig">Riktig: </string>
-    <string name="galt">Galt: </string>
+    <string name="riktig">Riktig </string>
+    <string name="riktigPoeng">Riktig : +1</string>
+    <string name="galt">Galt </string>
+    <string name="galtPoeng">Galt : +1</string>
     <string name="buttonSlett">SLETT</string>
     <string name="buttonSvar">SVAR</string>
     <string name="mainLogo">MATHSPILL</string>

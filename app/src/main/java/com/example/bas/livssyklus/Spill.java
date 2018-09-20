@@ -1,12 +1,18 @@
 package com.example.bas.livssyklus;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +20,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Spill extends AppCompatActivity {
 
@@ -22,6 +30,8 @@ public class Spill extends AppCompatActivity {
     int galt = 0;
     int riktig = 0;
     ArrayList<Integer> list = new ArrayList<>();
+    MediaPlayer mpCorrect, mpWrong;
+    Dialog wrongDialog, correctDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,10 @@ public class Spill extends AppCompatActivity {
 
         inputText = (TextView) findViewById(R.id.inputTxt);
         outputText = (TextView) findViewById(R.id.outputTxt);
+        mpCorrect = MediaPlayer.create(this, R.raw.soundright);
+        mpWrong = MediaPlayer.create(this, R.raw.soundwrong);
+        correctDialog = displayCorrectDialog();
+        wrongDialog = displayWrongDialog();
 
         Resources res = getResources();
         final String[] questions  = res.getStringArray(R.array.questions);
@@ -147,25 +161,57 @@ public class Spill extends AppCompatActivity {
         stageText = (TextView)findViewById(R.id.stageTxt);
         stageText.setText(String.valueOf("Stage 1/"+String.valueOf(mode)));
 
+
         buttonSvar.setOnClickListener(new View.OnClickListener() {
+            int a;
 
             @Override
             public void onClick(View v) {
 
+
                 if(validationSuccess(inputText)){
                     if(stage < mode){
-                        int a = generateRandomInt(list);
+                        a = generateRandomInt(list);
                         boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
                         if(check){
-                            riktig+=1;
+                            riktig +=1;
+                            audioPlaying(mpCorrect);
+                            correctDialog.show();
+
+                            new CountDownTimer(2000, 1000) {
+
+                                @Override
+                                public void onTick(long millisUntilFinished){};
+
+                                @Override
+                                public void onFinish() {
+                                    correctDialog.dismiss();
+
+                                }
+                            }.start();
+
 
                         }else{
                             galt+=1;
+                            audioPlaying(mpWrong);
+                            wrongDialog.show();
+
+
+                            new CountDownTimer(2000, 1000) {
+                                Dialog d = displayWrongDialog();
+                                @Override
+                                public void onTick(long millisUntilFinished){};
+
+                                @Override
+                                public void onFinish() {
+
+                                    wrongDialog.dismiss();
+
+                                }
+                            }.start();
                         }
 
                         questionUpdate(outputText, questions,a, inputText);
-                        //Toast.makeText(Spill.this,String.valueOf("Riktig: "+ riktig+" Galt: "+galt),Toast.LENGTH_LONG).show();
-                        //Toast.makeText(Spill.this,String.valueOf(String.valueOf(mode)),Toast.LENGTH_LONG).show();
                         stage +=1;
                         stageText.setText(String.valueOf("Stage "+stage+ "/"+String.valueOf(mode)));
 
@@ -176,7 +222,11 @@ public class Spill extends AppCompatActivity {
                         boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
                         if(check){
                             riktig+=1;
-                        }else galt+=1;
+                            audioPlaying(mpCorrect);
+                        }else{
+                            galt+=1;
+                            audioPlaying(mpWrong);
+                        }
                         list.remove(list.size()-1);
                         lagreDataene(riktig,galt);
                         Intent goToResultat = new Intent(getApplicationContext(), Resultat.class);
@@ -245,6 +295,14 @@ public class Spill extends AppCompatActivity {
         outState.putInt("Galt",galt);
         outState.putInt("Riktig", riktig);
         outState.putIntegerArrayList("List",list);
+        if(correctDialog !=null){
+            correctDialog.dismiss();
+        }
+
+        if(wrongDialog !=null){
+            wrongDialog.dismiss();
+
+        }
 
         super.onSaveInstanceState(outState);
     }
@@ -355,6 +413,47 @@ public class Spill extends AppCompatActivity {
         text.setText(String.valueOf(array[tall]));
     }
 
+    public void audioPlaying(MediaPlayer music){
+        if(music.isPlaying()){
+            music.seekTo(0);
+        }else{
+            music.start();
+        }
+    }
+
+
+
+    public Dialog displayCorrectDialog(){
+        Dialog d = new Dialog(this){
+            @Override
+            public boolean onTouchEvent(MotionEvent event) {
+                dismiss();
+                return true;
+            }
+        };
+        d.setContentView(R.layout.dialog_correct);
+        //d.setCanceledOnTouchOutside(false);
+        //d.setCancelable(false);
+        //d.show();
+
+
+        return  d;
+    }
+
+    public Dialog displayWrongDialog(){
+        Dialog d = new Dialog(this){
+            @Override
+            public boolean onTouchEvent(MotionEvent event) {
+                dismiss();
+                return true;
+            }
+        };
+        d.setContentView(R.layout.dialog_wrong);
+        //d.setCanceledOnTouchOutside(false);
+        //d.setCancelable(false);
+        //d.show();
+        return  d;
+    }
 
 }
 

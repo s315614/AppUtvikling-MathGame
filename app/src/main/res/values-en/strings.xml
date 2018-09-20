@@ -3,8 +3,10 @@
     <string name="start_spill">Play</string>
     <string name="se_statistikk">Statistics</string>
     <string name="preferanser">Preferences</string>
-    <string name="riktig">Right: </string>
-    <string name="galt">Wrong: </string>
+    <string name="riktig">Right</string>
+    <string name="riktigPoeng">Right : +1</string>
+    <string name="galt">Wrong</string>
+    <string name="galtPoeng">Wrong : +1</string>
     <string name="buttonSlett">DELETE</string>
     <string name="buttonSvar">ENTER</string>
     <string name="mainLogo">MATHGAME</string>
