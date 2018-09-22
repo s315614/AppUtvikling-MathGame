@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -26,16 +28,30 @@ import java.util.TimerTask;
 public class Spill extends AppCompatActivity {
 
     TextView riktigText, galtText, stageText, inputText, outputText;
-    int stage = 1;
-    int galt = 0;
-    int riktig = 0;
+    int stage;
+    int galt;
+    int riktig;
     ArrayList<Integer> list = new ArrayList<>();
     MediaPlayer mpCorrect, mpWrong;
     Dialog wrongDialog, correctDialog;
+    SharedPreferences prefs;
+    String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
+        language = prefs.getString("lan","");
+
+        Toast.makeText(this,language,Toast.LENGTH_LONG).show();
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_spill);
 
         inputText = (TextView) findViewById(R.id.inputTxt);
@@ -160,6 +176,7 @@ public class Spill extends AppCompatActivity {
         galtText = (TextView)findViewById(R.id.galtText);
         stageText = (TextView)findViewById(R.id.stageTxt);
         stageText.setText(String.valueOf("Stage 1/"+String.valueOf(mode)));
+        stage = 1;
 
 
         buttonSvar.setOnClickListener(new View.OnClickListener() {
@@ -253,7 +270,6 @@ public class Spill extends AppCompatActivity {
     //Navigasjon ved trykk
     @Override
     public void onBackPressed() {
-        //Toast.makeText(getApplication(),"Hello",Toast.LENGTH_LONG).show();
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         String exit = getResources().getString(R.string.exit);

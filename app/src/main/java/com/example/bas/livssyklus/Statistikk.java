@@ -1,20 +1,37 @@
 package com.example.bas.livssyklus;
 
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class Statistikk extends AppCompatActivity {
+
+    SharedPreferences prefs;
+    String language;
+    TextView riktigText, galtText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
+        language = prefs.getString("lan","");
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_statistikk);
 
-        TextView riktigText = (TextView)findViewById(R.id.riktig);
-        TextView galtText = (TextView)findViewById(R.id.galt);
+        riktigText = (TextView)findViewById(R.id.riktig);
+        galtText = (TextView)findViewById(R.id.galt);
 
         displayScore(riktigText,galtText);
 

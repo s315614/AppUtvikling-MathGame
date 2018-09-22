@@ -16,17 +16,29 @@ import java.util.Locale;
 
 
 public class Preferenser extends AppCompatActivity {
+
     TextView languageId, norskLanguage,tyskLanguage, preferenseTekst;
     Button easyKnapp, mediumKnapp, hardKnapp;
-    public String languageToLoad;
-
-
+    Switch switch1;
+    String languageToLoad;
+    SharedPreferences prefs, sharedPreferences;
+    String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
+        language = prefs.getString("lan","");
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_preferenser);
+
         easyKnapp = (Button)findViewById(R.id.easyKnapp);
         easyKnapp.setText(R.string.easyKnapp);
         mediumKnapp = (Button)findViewById(R.id.mediumKnapp);
@@ -38,36 +50,53 @@ public class Preferenser extends AppCompatActivity {
         tyskLanguage = (TextView)findViewById(R.id.tyskLanguage);
         preferenseTekst = (TextView)findViewById(R.id.preferenseTekst);
 
-        Switch switch1 = (Switch)findViewById(R.id.switch1);
+        switch1 = (Switch)findViewById(R.id.switch1);
         Boolean value = true;
 
-        final SharedPreferences sharedPreferences = getSharedPreferences("isChecked", 0);
+        sharedPreferences = getSharedPreferences("isChecked", 0);
         value = sharedPreferences.getBoolean("isChecked", value);
         switch1.setChecked(value);
         switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
-                    sharedPreferences.edit().putBoolean("isChecked", true).apply();
                     languageToLoad  = "no";
+                    sharedPreferences.edit().putBoolean("isChecked", true).apply();
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("lan",languageToLoad);
+                    editor.commit();
+
                     Locale locale = new Locale(languageToLoad);
                     Locale.setDefault(locale);
                     Configuration config = new Configuration();
                     config.locale = locale;
                     getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
+
                     Intent intent = new Intent(Preferenser.this, Preferenser.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    finish();
+
                 }else{
-                    sharedPreferences.edit().putBoolean("isChecked", false).apply();
                     languageToLoad  = "de";
+                    sharedPreferences.edit().putBoolean("isChecked", false).apply();
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("lan",languageToLoad);
+                    editor.commit();
+
+
                     Locale locale = new Locale(languageToLoad);
                     Locale.setDefault(locale);
                     Configuration config = new Configuration();
                     config.locale = locale;
                     getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
+
                     Intent intent = new Intent(Preferenser.this, Preferenser.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
+                    finish();
+
                 }
 
 
@@ -125,6 +154,8 @@ public class Preferenser extends AppCompatActivity {
         });
     }
 
+
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
@@ -135,7 +166,7 @@ public class Preferenser extends AppCompatActivity {
         outState.putString("easyKnapp", easyKnapp.getText().toString());
         outState.putString("mediumKnapp", mediumKnapp.getText().toString());
         outState.putString("hardKnapp", hardKnapp.getText().toString());
-        outState.putString("languageToLoad", languageToLoad);
+
 
 
 
@@ -155,8 +186,6 @@ public class Preferenser extends AppCompatActivity {
         mediumKnapp.setText(savedInstanceState.getString("mediumKnapp"));
         hardKnapp.setText(savedInstanceState.getString("hardKnapp"));
 
-        String keepLanguage = savedInstanceState.getString(languageToLoad);
-
 
     }
 
@@ -168,6 +197,8 @@ public class Preferenser extends AppCompatActivity {
         finish();
 
     }
+
+
 
 
 

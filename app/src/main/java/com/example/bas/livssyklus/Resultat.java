@@ -4,23 +4,40 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Locale;
 
 public class Resultat extends AppCompatActivity {
 
+    GifImage gifImageView;
     TextView riktig, galt;
-
     Button restart, mainMenu;
+    SharedPreferences prefs;
+    String language;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
+        language = prefs.getString("lan","");
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+
         setContentView(R.layout.activity_resultat);
-        GifImage gifImageView = (GifImage) findViewById(R.id.GifImageView);
+
+        gifImageView = (GifImage) findViewById(R.id.GifImageView);
         gifImageView.setGifImageResource(R.drawable.giphy);
 
         riktig = (TextView)findViewById(R.id.riktig);
@@ -48,8 +65,6 @@ public class Resultat extends AppCompatActivity {
         });
 
         displayScore(riktig,galt);
-
-
     }
 
     //Override metode som tilkaller en AlertDialog når man trykker på tilbakeknappen(onBackPressed())
