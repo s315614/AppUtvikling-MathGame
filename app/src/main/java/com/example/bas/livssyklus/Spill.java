@@ -10,8 +10,6 @@ import android.content.res.Resources;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,8 +20,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Spill extends AppCompatActivity {
 
@@ -409,11 +405,11 @@ public class Spill extends AppCompatActivity {
         return false;
     }
 
-    //Metode som generere et tall i mellom 0 og 25
+    //Metode som generere et tall i mellom 0 og 34
     //Returnerer (int) dette tallet
     public int generateRandomInt() {
         Random r = new Random();
-        int value = r.nextInt((25 - 0) + 1) + 0;
+        int value = r.nextInt((34 - 0) + 1) + 0;
         return value;
     }
 

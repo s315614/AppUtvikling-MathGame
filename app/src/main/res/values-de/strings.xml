@@ -25,6 +25,6 @@
     <string name="language">Sprache wählen</string>
     <string name="norsk">Norwegisch</string>
     <string name="german">Deutsche</string>
-    <string name="slettText">Slett historikk</string>
+    <string name="slettText">Verlauf löschen</string>
 
 </resources>

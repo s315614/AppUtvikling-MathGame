@@ -5,6 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/hovedBackground"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -52,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp"
         android:orientation="vertical">
 
         <TableRow

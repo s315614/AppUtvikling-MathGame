@@ -7,7 +7,7 @@
     <color name="colorInputTxt">#a8c9ff</color>
     <color name="colorBackground">#f2f7ff</color>
     <color name="colorWhite">#ffffff</color>
-
+    <color name="hovedBackground">#87ceeb</color>
     <color name="gameBackground">#e4faff</color>
     <color name="correct">#6eff46</color>
     <color name="wrong">#ff1515</color>

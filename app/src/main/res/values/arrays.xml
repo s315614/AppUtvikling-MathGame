@@ -2,61 +2,77 @@
 <resources>
 
     <string-array name="questions">
-        <item>0 + 1</item>
-        <item>1 + 1</item>
-        <item>2 + 1</item>
-        <item>3 + 1</item>
-        <item>4 + 1</item>
-        <item>5 + 1</item>
-        <item>6 + 1</item>
-        <item>7 + 1</item>
-        <item>8 + 1</item>
-        <item>9 + 1</item>
-        <item>10 + 1</item>
-        <item>11 + 1</item>
-        <item>12 + 1</item>
-        <item>13 + 1</item>
-        <item>14 + 1</item>
-        <item>15 + 1</item>
-        <item>16 + 1</item>
-        <item>17 + 1</item>
-        <item>18 + 1</item>
-        <item>19 + 1</item>
-        <item>20 + 1</item>
-        <item>21 + 1</item>
-        <item>22 + 1</item>
-        <item>23 + 1</item>
-        <item>24 + 1</item>
-        <item>25 + 1</item>
+        <item>8 + 8</item>
+        <item>4 * 2</item>
+        <item>3 * 3</item>
+        <item>10 / 2</item>
+        <item>5 - 2</item>
+        <item>3 * 7</item>
+        <item>42 / 6</item>
+        <item>23 + 17</item>
+        <item>44 - 8</item>
+        <item>99 / 3</item>
+        <item>7 * 8</item>
+        <item>9 + 25</item>
+        <item>54 - 9</item>
+        <item>9 * 5</item>
+        <item>6 * 4</item>
+        <item>11 * 12</item>
+        <item>34 + 48</item>
+        <item>92 / 4</item>
+        <item>76 - 21</item>
+        <item>12 * 10</item>
+        <item>98 - 25</item>
+        <item>91 / 7</item>
+        <item>65 + 39</item>
+        <item>15 * 3</item>
+        <item>74 / 2</item>
+        <item>2 x 2</item>
+        <item>5 + 20</item>
+        <item>20 / 2</item>
+        <item>97 + 20</item>
+        <item>20 - 8</item>
+        <item>7 x 4</item>
+        <item>4 x 8</item>
+        <item>47 - 35</item>
+        <item>98 + 15</item>
     </string-array>
 
     <string-array name="answers">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
+        <item>16</item>
         <item>8</item>
         <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>20</item>
+        <item>5</item>
+        <item>3</item>
         <item>21</item>
-        <item>22</item>
-        <item>23</item>
+        <item>7</item>
+        <item>40</item>
+        <item>36</item>
+        <item>33</item>
+        <item>56</item>
+        <item>34</item>
+        <item>45</item>
+        <item>45</item>
         <item>24</item>
+        <item>132</item>
+        <item>82</item>
+        <item>23</item>
+        <item>55</item>
+        <item>120</item>
+        <item>73</item>
+        <item>13</item>
+        <item>104</item>
+        <item>45</item>
+        <item>37</item>
+        <item>4</item>
         <item>25</item>
-        <item>26</item>
+        <item>10</item>
+        <item>117</item>
+        <item>12</item>
+        <item>28</item>
+        <item>32</item>
+        <item>12</item>
+        <item>113</item>
     </string-array>
 
 
