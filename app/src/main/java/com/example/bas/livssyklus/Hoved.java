@@ -24,8 +24,6 @@ public class Hoved extends AppCompatActivity {
         prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
         language = prefs.getString("lan","");
 
-        Toast.makeText(this,language,Toast.LENGTH_LONG).show();
-
         Locale locale = new Locale(language);
         Locale.setDefault(locale);
         Configuration config = new Configuration();

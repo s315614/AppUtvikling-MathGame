@@ -15,7 +15,8 @@
     <string name="mediumKnapp">MEDIUM-10</string>
     <string name="hardKnapp">HARD-25</string>
     <string name="exit">Exit</string>
-    <string name="exit_tekst">Vil du gå ut av spillet?</string>
+    <string name="exit_tekst">Vil du gå ut av spillet? Svarene dine vil ikke bli lagret!</string>
+    <string name="exit_tekst_result">Vil du gå ut av spillet?</string>
     <string name="avslutt">Avslutt</string>
     <string name="avbryt">Avbryt</string>
     <string name="resultat">Resultat</string>
@@ -24,6 +25,8 @@
     <string name="norsk">Norsk</string>
     <string name="german">Tysk</string>
     <string name="language">Velg språk</string>
+    <string name="slettText">Slett historikk</string>
+
 
 
 </resources>

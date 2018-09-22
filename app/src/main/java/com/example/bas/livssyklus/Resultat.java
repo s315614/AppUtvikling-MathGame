@@ -78,7 +78,7 @@ public class Resultat extends AppCompatActivity {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         String exit = getResources().getString(R.string.exit);
-        String exitTekst = getResources().getString(R.string.exit_tekst);
+        String exitTekst = getResources().getString(R.string.exit_tekst_result);
         String avslutt = getResources().getString(R.string.avslutt);
         String avbryt = getResources().getString(R.string.avbryt);
 

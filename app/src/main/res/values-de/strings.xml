@@ -15,7 +15,8 @@
     <string name="mediumKnapp">MITTEL-10</string>
     <string name="hardKnapp">SCHWER-25</string>
     <string name="exit">Ausgang</string>
-    <string name="exit_tekst">Möchtest du das Spiel beenden?</string>
+    <string name="exit_tekst">Möchtest du das Spiel beenden? Deine Antworten werden nicht gespeichert!</string>
+    <string name="exit_tekst_result">Möchtest du das Spiel beenden?</string>
     <string name="avslutt">Ausgang</string>
     <string name="avbryt">stornieren</string>
     <string name="resultat">Ergebnis</string>
@@ -24,6 +25,6 @@
     <string name="language">Sprache wählen</string>
     <string name="norsk">Norwegisch</string>
     <string name="german">Deutsche</string>
-
+    <string name="slettText">Slett historikk</string>
 
 </resources>

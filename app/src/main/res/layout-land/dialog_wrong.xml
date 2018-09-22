@@ -2,39 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="330dp"
-    android:background="@color/gameBackground"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="493dp"
+        android:layout_height="292dp"
+        android:background="@color/gameBackground"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/galt"
+            android:text="@string/riktig"
             android:textAlignment="center"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/wrong"
             android:textSize="46sp"
             android:textStyle="bold" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="194dp">
+            android:layout_height="178dp">
 
             <ImageView
                 android:id="@+id/correctPicture"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="169dp"
                 app:srcCompat="@drawable/picturewrong" />
         </FrameLayout>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="13dp" />
+            android:layout_height="8dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -45,5 +46,7 @@
             android:textColor="@color/wrong"
             android:textSize="28sp"
             android:textStyle="bold" />
+
     </LinearLayout>
+
 </LinearLayout>

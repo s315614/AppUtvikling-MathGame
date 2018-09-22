@@ -16,7 +16,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="1dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -46,7 +46,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="4dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
@@ -72,6 +72,31 @@
             android:textColor="#d60420"
             android:textSize="26sp"
             android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/slettBtn"
+            android:layout_width="10sp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:text="@string/slettText"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
 
 </LinearLayout>
