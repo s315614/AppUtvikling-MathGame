@@ -26,5 +26,7 @@
     <string name="norsk">Norwegisch</string>
     <string name="german">Deutsche</string>
     <string name="slettText">Verlauf löschen</string>
+    <string name="validering">Sie müssen eine antwort geben!</string>
+    <string name="nullText">0</string>
 
 </resources>

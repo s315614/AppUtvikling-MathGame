@@ -174,7 +174,6 @@ public class Spill extends AppCompatActivity {
 
 
         buttonSvar.setOnClickListener(new View.OnClickListener() {
-            int a;
 
             @Override
             public void onClick(View v) {
@@ -182,7 +181,7 @@ public class Spill extends AppCompatActivity {
 
                 if(validationSuccess(inputText)){
                     if(stage < mode){
-                        a = generateRandomInt(list);
+                        int a = generateRandomInt(list);
                         boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
                         if(check){
                             riktig +=1;
@@ -231,6 +230,7 @@ public class Spill extends AppCompatActivity {
                     else if(stage==mode){
                         int a = generateRandomInt(list);
                         boolean check = checkQuestion(inputText, answers, list, riktigText,galtText);
+
                         if(check){
                             riktig+=1;
                             audioPlaying(mpCorrect);
@@ -245,11 +245,8 @@ public class Spill extends AppCompatActivity {
                         finish();
                     }
 
-                    else{
-                        Toast.makeText(Spill.this,String.valueOf("Ferdig!"),Toast.LENGTH_LONG).show();
-                    }
                 }else{
-                    Toast.makeText(Spill.this, "You have to answear!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Spill.this, R.string.validering, Toast.LENGTH_LONG).show();
                 }
 
             }

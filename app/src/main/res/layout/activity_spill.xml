@@ -36,7 +36,6 @@
                 android:layout_height="112dp"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/bungee_shade"
-                android:text="2x2"
                 android:textAlignment="center"
                 android:textColor="#3d0366"
                 android:textSize="60sp"
@@ -85,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:drawable/screen_background_light_transparent"
                     android:fontFamily="@font/special_elite"
-                    android:text="0"
+                    android:text="@string/nullText"
                     android:textAlignment="center"
                     android:textSize="32sp" />
             </LinearLayout>
@@ -111,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:drawable/screen_background_light_transparent"
                     android:fontFamily="@font/special_elite"
-                    android:text="0"
+                    android:text="@string/nullText"
                     android:textAlignment="center"
                     android:textSize="32sp" />
             </LinearLayout>
@@ -232,11 +231,11 @@
                 <Button
                     android:id="@+id/buttonSlett"
                     android:layout_width="95dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="@font/shojumaru"
                     android:text="@string/buttonSlett"
-                    android:textSize="24sp" />
+                    android:textSize="16sp" />
 
                 <Button
                     android:id="@+id/button0"

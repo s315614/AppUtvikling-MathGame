@@ -26,7 +26,8 @@
     <string name="german">Tysk</string>
     <string name="language">Velg språk</string>
     <string name="slettText">Slett historikk</string>
-
+    <string name="validering">Du må oppgi et svar!</string>
+    <string name="nullText">0</string>
 
 
 </resources>

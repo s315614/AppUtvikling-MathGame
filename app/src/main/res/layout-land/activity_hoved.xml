@@ -20,7 +20,6 @@
         android:fontFamily="@font/shojumaru"
         android:text="@string/mainLogo"
         android:textAlignment="center"
-        android:textColor="#185953"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="normal" />
