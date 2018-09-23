@@ -49,6 +49,8 @@ public class Statistikk extends AppCompatActivity {
 
     }
 
+    //Metode som henter fram verdier som er lagret i Sharedpreferences
+    //Verdiene vises fram på skjermbildet
     public void displayScore(TextView riktigText, TextView galtText){
         SharedPreferences prefs = getSharedPreferences("Resultat",MODE_PRIVATE);
         int riktig = prefs.getInt("antallRiktig",0);

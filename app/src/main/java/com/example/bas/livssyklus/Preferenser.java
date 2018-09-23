@@ -106,11 +106,6 @@ public class Preferenser extends AppCompatActivity {
         });
 
 
-
-
-
-
-
         Button easyKnapp = (Button) findViewById(R.id.easyKnapp);
         easyKnapp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +151,9 @@ public class Preferenser extends AppCompatActivity {
 
 
 
+    //Metode for å oppbevare nåværende tilstand, når man går i f.eks landscape modus
+    //Dersom man går i landscape modus så blir alle våre ønskende dataer puttet inn i en (Bundle) outState med spesielle (String)key
+    //Bruker onSaveInstanceState for å oppbevare Bundle
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
@@ -167,13 +165,10 @@ public class Preferenser extends AppCompatActivity {
         outState.putString("mediumKnapp", mediumKnapp.getText().toString());
         outState.putString("hardKnapp", hardKnapp.getText().toString());
 
-
-
-
-
         super.onSaveInstanceState(outState);
-        //startActivity(getIntent());
     }
+
+    //Override metode for å henter tilstander, når man går tilbake til stående modus
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -189,6 +184,7 @@ public class Preferenser extends AppCompatActivity {
 
     }
 
+    //Override metode som navigerer tilbake til Hovedsiden
     @Override
     public void onBackPressed(){
 

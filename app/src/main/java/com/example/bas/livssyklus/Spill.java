@@ -313,9 +313,7 @@ public class Spill extends AppCompatActivity {
         super.onSaveInstanceState(outState);
     }
 
-    //Metode for å oppbevare nåværende tilstand, når man går i f.eks landscape modus
-    //Dersom man går i landscape modus så blir alle våre ønskende dataer puttet inn i en (Bundle) outState
-    //Bruker onSaveInstanceState for å oppbevare Bundle
+    //Override metode for å henter tilstander, når man går tilbake til stående modus
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -356,6 +354,8 @@ public class Spill extends AppCompatActivity {
         return check;
     }
 
+    //Metode som sjekker om at svaret stemmer med string-array svaret
+    //Returnerer true eller false
     public boolean checkQuestion(TextView input, String[] svarliste, ArrayList<Integer> list, TextView riktigText, TextView galtText){
         boolean check;
         int svar = Integer.parseInt(String.valueOf(input.getText()));
@@ -419,6 +419,8 @@ public class Spill extends AppCompatActivity {
         text.setText(String.valueOf(array[tall]));
     }
 
+    //Metode som starer musikken
+    //Dersom lyden fortsatt spiller, så blir spilletiden satt til 0(starter på nytt)
     public void audioPlaying(MediaPlayer music){
         if(music.isPlaying()){
             music.seekTo(0);
@@ -428,7 +430,7 @@ public class Spill extends AppCompatActivity {
     }
 
 
-
+    //Metode som starter en Dialogboks
     public Dialog displayCorrectDialog(){
         Dialog d = new Dialog(this){
             @Override
@@ -438,14 +440,11 @@ public class Spill extends AppCompatActivity {
             }
         };
         d.setContentView(R.layout.dialog_correct);
-        //d.setCanceledOnTouchOutside(false);
-        //d.setCancelable(false);
-        //d.show();
-
 
         return  d;
     }
 
+    //Metode som starter en Dialogboks
     public Dialog displayWrongDialog(){
         Dialog d = new Dialog(this){
             @Override
@@ -455,9 +454,7 @@ public class Spill extends AppCompatActivity {
             }
         };
         d.setContentView(R.layout.dialog_wrong);
-        //d.setCanceledOnTouchOutside(false);
-        //d.setCancelable(false);
-        //d.show();
+
         return  d;
     }
 
