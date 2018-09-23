@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/blue"
     android:orientation="vertical"
-    tools:context=".Preferenser">
+    tools:context="com.example.mappe1.mathspill.Preferenser">
 
     <TextView
         android:id="@+id/languageId"

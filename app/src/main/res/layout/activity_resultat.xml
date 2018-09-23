@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundresult"
     android:orientation="vertical"
-    tools:context=".Resultat">
+    tools:context="com.example.mappe1.mathspill.Resultat">
 
 
     <TextView
@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             android:paddingLeft="30dp">
 
-            <com.example.bas.livssyklus.GifImage
+            <com.example.mappe1.mathspill.GifImage
                 android:id="@+id/gifImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -39,7 +39,7 @@
             android:layout_height="188dp"
             android:paddingRight="30dp">
 
-            <com.example.bas.livssyklus.GifImage
+            <com.example.mappe1.mathspill.GifImage
                 android:id="@+id/GifImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

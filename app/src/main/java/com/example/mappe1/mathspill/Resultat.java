@@ -1,4 +1,4 @@
-package com.example.bas.livssyklus;
+package com.example.mappe1.mathspill;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,7 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.mappe1.mathspill.R;
 
 import java.util.Locale;
 

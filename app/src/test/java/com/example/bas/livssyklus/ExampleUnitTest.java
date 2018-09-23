@@ -1,4 +1,4 @@
-package com.example.bas.livssyklus;
+package com.example.mappe1.mathspill;
 
 import org.junit.Test;
 

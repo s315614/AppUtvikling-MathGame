@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/cloudbackground"
     android:orientation="vertical"
-    tools:context=".Hoved">
+    tools:context="com.example.mappe1.mathspill.Hoved">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bas.livssyklus">
+    package="com.example.mappe1.mathspill">
 
     <application
         android:allowBackup="true"
@@ -10,18 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         android:hardwareAccelerated="false">
-        <activity android:name=".Hoved">
+        <activity android:name="com.example.mappe1.mathspill.Hoved">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Spill" />
-        <activity android:name=".Preferenser" />
-        <activity android:name=".Resultat" />
+        <activity android:name="com.example.mappe1.mathspill.Spill" />
+        <activity android:name="com.example.mappe1.mathspill.Preferenser" />
+        <activity android:name="com.example.mappe1.mathspill.Resultat" />
 
-        <activity android:name=".Statistikk"></activity>
+        <activity android:name="com.example.mappe1.mathspill.Statistikk"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

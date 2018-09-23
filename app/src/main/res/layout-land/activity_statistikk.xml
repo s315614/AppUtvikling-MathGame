@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/forstatistic"
     android:orientation="vertical"
-    tools:context=".Statistikk">
+    tools:context="com.example.mappe1.mathspill.Statistikk">
 
     <Space
         android:layout_width="match_parent"

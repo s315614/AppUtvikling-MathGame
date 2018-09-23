@@ -1,4 +1,4 @@
-package com.example.bas.livssyklus;
+package com.example.mappe1.mathspill;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +11,8 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.mappe1.mathspill.R;
 
 import java.util.Locale;
 
